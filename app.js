@@ -35,12 +35,6 @@ blog.config.normalizer = {
 	}
 };
 
-blog.init = function() {
-	this._removeUserInvalidationFrom(this);
-	this.render();
-	this.ready();
-};
-
 blog.templates.main =
 	'<div class="{class:container}"></div>';
 
@@ -57,23 +51,6 @@ blog.renderers.container = function(element) {
 		})
 	});
 	return element;
-};
-
-// removing "Echo.UserSession.onInvalidate" subscription from an app
-// to avoid double-handling of the same evernt (by Canvas and by the widget itself)
-blog.methods._removeUserInvalidationFrom = function() {
-	var topic = "Echo.UserSession.onInvalidate";
-	$.map(Array.prototype.slice.call(arguments), function(inst) {
-		$.each(inst.subscriptionIDs, function(id) {
-			var obj = $.grep(Echo.Events._subscriptions[topic].global.handlers, function(o) {
-				return o.id === id;
-			})[0];
-			if (obj && obj.id) {
-				Echo.Events.unsubscribe({"handlerId": obj.id});
-				return false;
-			}
-		});
-	});
 };
 
 blog.dependencies = [{
