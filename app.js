@@ -6,6 +6,7 @@ if (Echo.App.isDefined("Echo.Apps.LiveBlogging")) return;
 var blog = Echo.App.manifest("Echo.Apps.LiveBlogging");
 
 blog.config = {
+	"targetURL": "",
 	"dependencies": {
 		"Janrain": {"appId": undefined},
 		"StreamServer": {"appkey": undefined}
@@ -44,6 +45,7 @@ blog.renderers.container = function(element) {
 		"component": "Echo.Apps.Conversations",
 		"config": $.extend(true, {}, this.config.get("advanced"), {
 			"target": element,
+			"targetURL": this.config.get("targetURL"),
 			"postComposer": {
 				"visible": this.user.is("admin")
 			},
