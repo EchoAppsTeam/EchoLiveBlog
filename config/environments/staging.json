@@ -4,5 +4,8 @@
 		"id": "echo-live-blogging-dev",
 		"name": "Live Blogging (Dev)"
 	},
-	"baseURL": "//echoplatform.com/sandbox/staging/apps/echo/live-blogging/v{%=packageVersions.stable%}"
+	"baseURLs": {
+		"dev": "//echoplatform.com/sandbox/staging/apps/echo/live-blogging/v{%=packageVersions.stable%}",
+		"prod": "//echoplatform.com/sandbox/staging/apps/echo/live-blogging/v{%=packageVersions.stable%}/dev"
+	}
 }

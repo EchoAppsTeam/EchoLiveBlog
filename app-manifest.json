@@ -1,8 +1,8 @@
 {
-    "id": "{%=manifest.id%}",
-    "name": "{%=manifest.name%}",
+    "id": "echo-live-blogging-dev",
+    "name": "Live Blogging (Dev)",
     "description": "Echo Live Blog enables the editorial team to quickly create streams of live coverage during breaking news or major events. ",
-    "app_version": "{%=packageVersions.stable%}",
+    "app_version": "1.0.0",
     "cloudapp_protocol_version": "1.0.0",
     "developer": {
         "id": "echo",
@@ -13,13 +13,16 @@
     },
     "client_widget": {
         "component": "Echo.Apps.LiveBlogging",
-        "script": "{%=baseURL%}/app.js"
+        "scripts": {
+          "prod": "//echoplatform.com/sandbox/staging/apps/echo/live-blogging/v1.0/dev/app.js",
+          "dev": "//echoplatform.com/sandbox/staging/apps/echo/live-blogging/v1.0/app.js"
+        }
     },
     "dashboards": [{
         "id": "instances",
         "type": "instances",
         "title": "Instances",
-        "script": "{%=baseURL%}/dashboard.js",
+        "script": "//echoplatform.com/sandbox/staging/apps/echo/live-blogging/v1.0/dev/dashboard.js",
         "component": "Echo.Apps.LiveBlogging.Dashboard",
         "config": {
             "instanceManager": {

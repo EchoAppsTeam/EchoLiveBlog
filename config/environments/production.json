@@ -4,5 +4,8 @@
 		"id": "echo-live-blogging",
 		"name": "Live Blogging"
 	},
-	"baseURL": "//cdn.echoenabled.com/apps/echo/live-blogging/v{%=packageVersions.stable%}"
+	"baseURLs": {
+		"prod": "//cdn.echoenabled.com/apps/echo/live-blogging/v{%=packageVersions.stable%}",
+		"dev": "//cdn.echoenabled.com/apps/echo/live-blogging/v{%=packageVersions.stable%}/dev"
+	}
 }
