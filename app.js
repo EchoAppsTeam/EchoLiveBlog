@@ -37,9 +37,30 @@ blog.config.normalizer = {
 };
 
 blog.templates.main =
-	'<div class="{class:container}"></div>';
+	'<div class="{class:container}">' +
+		'<div class="{class:auth}"></div>' +
+		'<div class="{class:comments}"></div>' +
+	'</div>';
 
-blog.renderers.container = function(element) {
+blog.renderers.auth = function(element) {
+	if (this.user.is("logged")) {
+		return element.empty().hide();
+	}
+	this.initComponent({
+		"id": "auth",
+		"component": "Echo.IdentityServer.Controls.Auth",
+		"config": {
+			"target": element,
+			"plugins": [{
+				"name": "JanrainConnector",
+				"appId": this.config.get("dependnecies.Janrain.appId")
+			}]
+		}
+	});
+	return element;
+};
+
+blog.renderers.comments = function(element) {
 	this.initComponent({
 		"id": "conversations",
 		"component": "Echo.Apps.Conversations",
@@ -58,6 +79,9 @@ blog.renderers.container = function(element) {
 blog.dependencies = [{
 	"url": "//cdn.echoenabled.com/apps/echo/conversations/v1.3/app.js",
 	"app": "Echo.Apps.Conversations"
+}, {
+	"url": "//cdn.sdk.evseev.ul.js-kit.com/sdk/v3/dev/identityserver.pack.js",
+	"app": "Echo.IdentityServer.Controls.Auth"
 }];
 
 Echo.App.create(blog);
