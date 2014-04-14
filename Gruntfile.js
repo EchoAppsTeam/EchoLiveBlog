@@ -19,9 +19,6 @@ module.exports = function(grunt) {
 			"app.js",
 			"dashboard.js"
 		],
-		"images": [
-			"images/**"
-		],
 		"demo": [
 			"demo.html",
 			"demo-dev.html"
@@ -65,14 +62,6 @@ module.exports = function(grunt) {
 		"copy": {
 			"js": {
 				"src": "<%= sources.js %>",
-				"dest": "<%= dirs.build %>/"
-			},
-			"third-party": {
-				"src": "third-party/*.js",
-				"dest": "<%= dirs.build %>/"
-			},
-			"images": {
-				"src": "<%= sources.images %>",
 				"dest": "<%= dirs.build %>/"
 			},
 			"demo": {

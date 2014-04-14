@@ -18,14 +18,12 @@ module.exports = function(grunt) {
 		switch(stage) {
 			case "dev":
 				tasks = [
-					"copy:third-party",
 					"copy:js",
 					"concat"
 				];
 				break;
 			case "min":
 				tasks = [
-					"copy:third-party",
 					"copy:js",
 					"uglify",
 					"concat"
@@ -34,7 +32,6 @@ module.exports = function(grunt) {
 			case "final":
 				tasks = [
 					"copy:demo",
-					"copy:images",
 					"copy:manifest"
 				];
 				break;
