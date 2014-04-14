@@ -56,7 +56,7 @@ blog.renderers.container = function(element) {
 };
 
 blog.dependencies = [{
-	"url": "//cdn.echoenabled.com/apps/echo/conversations/v1.3/dev/app.js",
+	"url": "//cdn.echoenabled.com/apps/echo/conversations/v1.3/app.js",
 	"app": "Echo.Apps.Conversations"
 }];
 
