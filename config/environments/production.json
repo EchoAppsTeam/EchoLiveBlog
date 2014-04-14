@@ -5,6 +5,7 @@
 		"name": "Live Blogging"
 	},
 	"baseURLs": {
+		"dataserver": "//nds.echoenabled.com/api",
 		"prod": "//cdn.echoenabled.com/apps/echo/live-blogging/v{%=packageVersions.stable%}",
 		"dev": "//cdn.echoenabled.com/apps/echo/live-blogging/v{%=packageVersions.stable%}/dev"
 	}

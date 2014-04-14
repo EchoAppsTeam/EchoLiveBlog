@@ -27,7 +27,7 @@ dashboard.config.ecl = [{
 			"dataserverBundleName": "Echo LiveBlogging Auto-Generated Bundle for {instanceName}"
 		},
 		"apiBaseURLs": {
-			"DataServer": "http://nds.echoenabled.com/api/"
+			"DataServer": "{%=baseURLs.dataserver%}/"
 		}
 	}
 }, {
@@ -69,13 +69,6 @@ dashboard.config.ecl = [{
 		}
 	},
 	"items": []
-}, {
-	"component": "Group",
-	"name": "dependencies",
-	"type": "object",
-	"config": {
-		"title": "Dependencies"
-	}
 }];
 
 dashboard.config.normalizer = {
@@ -210,7 +203,7 @@ dashboard.methods._fetchData = function(callback) {
 };
 
 dashboard.methods._assembleTargetURL = function() {
-	var re =	new RegExp("\/" + this.get("data.instance.name") + "$");
+	var re = new RegExp("\/" + this.get("data.instance.name") + "$");
 	var targetURL = this.get("data.instance.config.targetURL");
 
 	if (!targetURL || !targetURL.match(re)) {
@@ -221,7 +214,7 @@ dashboard.methods._assembleTargetURL = function() {
 };
 
 dashboard.dependencies = [{
-	"url": "{config:cdnBaseURL.apps.dataserver}/full.pack.js",
+	"url": "//cdn.echoenabled.com/apps/echo/dataserver/v3/full.pack.js",
 	"control": "Echo.DataServer.Controls.Pack"
 }, {
 	"url": "//cdn.echoenabled.com/apps/echo/conversations/v1.3/dashboard.js",

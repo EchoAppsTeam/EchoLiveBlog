@@ -4,5 +4,9 @@
 		"id": "",
 		"name": ""
 	},
-	"baseURL": ""
+	"baseURLs": {
+		"dataserver": "",
+		"dev": "",
+		"prod": ""
+	}
 }
