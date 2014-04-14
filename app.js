@@ -53,7 +53,7 @@ blog.renderers.auth = function(element) {
 			"target": element,
 			"plugins": [{
 				"name": "JanrainConnector",
-				"appId": this.config.get("dependnecies.Janrain.appId")
+				"appId": this.config.get("dependencies.Janrain.appId")
 			}]
 		}
 	});
