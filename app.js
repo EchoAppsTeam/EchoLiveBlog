@@ -80,7 +80,7 @@ blog.dependencies = [{
 	"url": "//cdn.echoenabled.com/apps/echo/conversations/v1.3/app.js",
 	"app": "Echo.Apps.Conversations"
 }, {
-	"url": "//cdn.sdk.evseev.ul.js-kit.com/sdk/v3/dev/identityserver.pack.js",
+	"url": "//cdn.echoenabled.com/sdk/v3/identityserver.pack.js",
 	"app": "Echo.IdentityServer.Controls.Auth"
 }];
 
