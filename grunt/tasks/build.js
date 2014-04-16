@@ -32,6 +32,7 @@ module.exports = function(grunt) {
 			case "final":
 				tasks = [
 					"copy:demo",
+					"copy:images",
 					"copy:manifest"
 				];
 				break;
