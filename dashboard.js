@@ -249,7 +249,7 @@ dashboard.dependencies = [{
 	"url": "//cdn.echoenabled.com/apps/echo/dataserver/v3/full.pack.js",
 	"control": "Echo.DataServer.Controls.Pack"
 }, {
-	"url": "//cdn.echoenabled.com/apps/echo/conversations/v1.3/dashboard.js",
+	"url": "//cdn.echoenabled.com/apps/echo/conversations/v2/dashboard.js",
 	"app": "Echo.Apps.Conversations.Dashboard"
 }];
 
