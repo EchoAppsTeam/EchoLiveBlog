@@ -55,6 +55,32 @@ dashboard.config.ecl = [{
 			"validators": ["required"],
 			"options": []
 		}
+	}, {
+		"component": "Fieldset",
+		"name": "FilePicker",
+		"type": "object",
+		"items": [{
+			"component": "Input",
+			"name": "apiKey",
+			"type": "string",
+			"config": {
+				"title": "FilePicker API key",
+				"desc": "Specifies the Filepicker api key for this instance",
+				"options": []
+			}
+		}]
+	}, {
+		"component": "Fieldset",
+		"name": "embedly",
+		"type": "object",
+		"items": [{
+			"component": "Input",
+			"name": "apiKey",
+			"type": "string",
+			"config": {
+				"title": "Embed.ly API Key"
+			}
+		}]
 	}]
 }, {
 	"component": "Dashboard",
@@ -156,6 +182,12 @@ dashboard.methods.declareInitialConfig = function() {
 			},
 			"StreamServer": {
 				"appkey": keys.length ? keys[0].key : undefined
+			},
+			"FilePicker": {
+				"apiKey": "AFLWUBllDRwWZl7sQO1V1z"
+			},
+			"embedly": {
+				"apiKey": "5945901611864679a8761b0fcaa56f87"
 			}
 		}
 	};
