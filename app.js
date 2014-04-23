@@ -43,12 +43,9 @@ blog.templates.main =
 	'</div>';
 
 blog.renderers.auth = function(element) {
-	if (this.user.is("logged")) {
-		return element.empty().hide();
-	}
 	this.initComponent({
 		"id": "auth",
-		"component": "Echo.IdentityServer.Controls.Auth",
+		"component": "Echo.StreamServer.Controls.Auth",
 		"config": {
 			"target": element,
 			"plugins": [{
@@ -77,11 +74,11 @@ blog.renderers.comments = function(element) {
 };
 
 blog.dependencies = [{
-	"url": "//cdn.echoenabled.com/apps/echo/conversations/v1.3/app.js",
+	"url": "//cdn.echoenabled.com/apps/echo/conversations/v2/app.js",
 	"app": "Echo.Apps.Conversations"
 }, {
-	"url": "//cdn.echoenabled.com/sdk/v3/identityserver.pack.js",
-	"app": "Echo.IdentityServer.Controls.Auth"
+	"url": "//cdn.echoenabled.com/apps/echo/conversations/v2/dev/streamserver.pack.js",
+	"app": "Echo.StreamServer.Controls.Auth"
 }];
 
 Echo.App.create(blog);
