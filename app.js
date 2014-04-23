@@ -43,6 +43,9 @@ blog.templates.main =
 	'</div>';
 
 blog.renderers.auth = function(element) {
+	if (this.user.is("admin")) {
+		return element.empty().hide();
+	}
 	this.initComponent({
 		"id": "auth",
 		"component": "Echo.StreamServer.Controls.Auth",
