@@ -89,7 +89,7 @@ dashboard.config.ecl = [{
 	"config": {
 		"title": "Advanced",
 		"component": "Echo.Apps.Conversations.Dashboard",
-		"url": "//cdn.echoenabled.com/apps/echo/conversations/v1.3/dashboard.js",
+		"url": "//cdn.echoenabled.com/apps/echo/conversations/v2/dashboard.js",
 		"config": {
 			"disableSettings": ["targetURL", "postComposer.visible", "dependencies"]
 		}
@@ -248,9 +248,6 @@ dashboard.methods._assembleTargetURL = function() {
 dashboard.dependencies = [{
 	"url": "//cdn.echoenabled.com/apps/echo/dataserver/v3/full.pack.js",
 	"control": "Echo.DataServer.Controls.Pack"
-}, {
-	"url": "//cdn.echoenabled.com/apps/echo/conversations/v2/dashboard.js",
-	"app": "Echo.Apps.Conversations.Dashboard"
 }];
 
 Echo.AppServer.Dashboard.create(dashboard);
