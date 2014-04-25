@@ -5,7 +5,21 @@ if (Echo.App.isDefined("Echo.Apps.LiveBlogging")) return;
 
 var blog = Echo.App.manifest("Echo.Apps.LiveBlogging");
 
+blog.events = {
+	"Echo.UserSession.onInvalidate": {
+		"context": "global",
+		"handler": function(_, data) {
+			var isAdmin = this.user.is("admin");
+			if (isAdmin !== this.get("isUserAdmin")) {
+				this.set("isUserAdmin", isAdmin);
+				this.refresh();
+			}
+		}
+	}
+};
+
 blog.config = {
+	"refreshOnUserInvalidate": false,
 	"targetURL": "",
 	"dependencies": {
 		"Janrain": {"appId": undefined},
@@ -36,11 +50,21 @@ blog.config.normalizer = {
 	}
 };
 
+blog.vars = {
+	"isUserAdmin": false
+};
+
 blog.templates.main =
 	'<div class="{class:container}">' +
 		'<div class="{class:auth}"></div>' +
 		'<div class="{class:comments}"></div>' +
 	'</div>';
+
+blog.init = function() {
+	this.set("isUserAdmin", this.user.is("admin"));
+	this.render();
+	this.ready();
+};
 
 blog.renderers.auth = function(element) {
 	if (this.user.is("admin")) {
