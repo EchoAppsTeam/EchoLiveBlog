@@ -104,7 +104,7 @@ blog.dependencies = [{
 	"url": "//cdn.echoenabled.com/apps/echo/conversations/v2/app.js",
 	"app": "Echo.Apps.Conversations"
 }, {
-	"url": "//cdn.echoenabled.com/apps/echo/conversations/v2/dev/streamserver.pack.js",
+	"url": "//cdn.echoenabled.com/apps/echo/conversations/v2/streamserver.pack.js",
 	"app": "Echo.StreamServer.Controls.Auth"
 }];
 
