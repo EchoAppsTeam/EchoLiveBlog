@@ -189,7 +189,7 @@ module.exports = function(grunt) {
 	var parts = grunt.config("pkg.version").split(".");
 	grunt.config("pkg.versions", {
 		"stable": parts.join("."),
-		"latest": parts[0] + "." + parts[1]
+		"latest": parts[0]
 	});
 
 	function assembleEnvConfig() {
