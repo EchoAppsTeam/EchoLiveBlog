@@ -9,9 +9,9 @@ blog.events = {
 	"Echo.UserSession.onInvalidate": {
 		"context": "global",
 		"handler": function(_, data) {
-			var isAdmin = this.user.is("admin");
-			if (isAdmin !== this.get("isUserAdmin")) {
-				this.set("isUserAdmin", isAdmin);
+			var userState = this.user.is("admin") ? "admin" : "user";
+			if (userState !== this.get("previousUserState")) {
+				this.set("previousUserState", userState);
 				this.refresh();
 			}
 		}
@@ -51,7 +51,7 @@ blog.config.normalizer = {
 };
 
 blog.vars = {
-	"isUserAdmin": false
+	"previousUserState": "user" // "user" or "admin"
 };
 
 blog.templates.main =
@@ -61,7 +61,7 @@ blog.templates.main =
 	'</div>';
 
 blog.init = function() {
-	this.set("isUserAdmin", this.user.is("admin"));
+	this.set("previousUserState", this.user.is("admin") ? "admin" : "user");
 	this.render();
 	this.ready();
 };
