@@ -30,5 +30,12 @@
                 "instance": {"useLoadingIcon": true}
             }
         }
+    }, {
+        "id": "docs",
+        "type": "external",
+        "title": "Documentation",
+        "config": {
+            "src": "http://emb.echoplatform.com/liveblogging/docs/overview/"
+        }
     }]
 }
