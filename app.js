@@ -23,7 +23,9 @@ blog.config = {
 	"targetURL": "",
 	"dependencies": {
 		"Janrain": {"appId": undefined},
-		"StreamServer": {"appkey": undefined}
+		"StreamServer": {"appkey": undefined},
+		"embedly": {"apiKey": undefined},
+		"FilePicker": {"apiKey": undefined}
 	},
 	"advanced": {
 		"postComposer": {
