@@ -25,7 +25,25 @@ blog.config = {
 		"Janrain": {"appId": undefined},
 		"StreamServer": {"appkey": undefined}
 	},
-	"advanced": {}
+	"advanced": {
+		"postComposer": {
+			"initialMode": "collapsed",
+			"collapseOn": {
+				"documentClick": true
+			},
+			"compact": {
+				"layout": "smallest",
+				"prompt": "Contribute here"
+			},
+			"contentTypes": {
+				"comments": {
+					"labels": {
+						"comment": "Update"
+					}
+				}
+			}
+		}
+	}
 };
 
 blog.config.normalizer = {
