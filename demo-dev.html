@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Echo Live Blogging v{%=packageVersions.stable%} Demo</title>
+	<title>Echo Live Blog v{%=packageVersions.stable%} Demo</title>
 </head>
 
 <body>
@@ -17,14 +17,14 @@
 				"dev": "{%= baseURLs.dev %}/app.js",
 				"prod": "{%= baseURLs.prod %}/app.js"
 			},
-			"component": "Echo.Apps.LiveBlogging",
+			"component": "Echo.Apps.LiveBlog",
 			"backplane": {
 				"serverBaseURL": "https://api.echoenabled.com/v1",
 				"busName": "echo"
 			},
 			"config": {
 				"target": document.getElementById("container"),
-				"targetURL": "http://live-blogging.echoplatform.com/demo",
+				"targetURL": "http://live-blog.echoplatform.com/demo",
 				"advanced": {
 					"auth": {
 						"allowAnonymousSubmission": true

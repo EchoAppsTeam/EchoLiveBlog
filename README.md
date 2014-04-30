@@ -1,4 +1,4 @@
-EchoLiveBlogging
+EchoLiveBlog
 ================
 
-Echo Live Blogging
+Echo Live Blog

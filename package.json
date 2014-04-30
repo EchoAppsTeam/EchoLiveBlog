@@ -1,6 +1,6 @@
 {
-  "name": "echo-live-blogging",
-  "description": "Echo Live Blogging reference app",
+  "name": "echo-live-blog",
+  "description": "Echo Live Blog reference app",
   "version": "1.0.0",
   "author": {
     "name": "Echo",
@@ -8,10 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:EchoAppsTeam/EchoLiveBlogging.git"
+    "url": "git@github.com:EchoAppsTeam/EchoLiveBlog.git"
   },
   "bugs": {
-    "url": "https://github.com/EchoAppsTeam/EchoLiveBlogging/issues"
+    "url": "https://github.com/EchoAppsTeam/EchoLiveBlog/issues"
   },
   "licenses": [
     {

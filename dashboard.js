@@ -1,9 +1,9 @@
 (function($) {
 "use strict";
 
-if (Echo.AppServer.Dashboard.isDefined("Echo.Apps.LiveBlogging.Dashboard")) return;
+if (Echo.AppServer.Dashboard.isDefined("Echo.Apps.LiveBlog.Dashboard")) return;
 
-var dashboard = Echo.AppServer.Dashboard.manifest("Echo.Apps.LiveBlogging.Dashboard");
+var dashboard = Echo.AppServer.Dashboard.manifest("Echo.Apps.LiveBlog.Dashboard");
 
 dashboard.inherits = Echo.Utils.getComponent("Echo.AppServer.Dashboards.AppSettings");
 
@@ -24,7 +24,7 @@ dashboard.config.ecl = [{
 	"config": {
 		"title": "",
 		"labels": {
-			"dataserverBundleName": "Echo LiveBlogging Auto-Generated Bundle for {instanceName}"
+			"dataserverBundleName": "Echo LiveBlog Auto-Generated Bundle for {instanceName}"
 		},
 		"apiBaseURLs": {
 			"DataServer": "{%=baseURLs.dataserver%}/"

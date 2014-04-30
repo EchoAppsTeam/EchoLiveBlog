@@ -1,12 +1,12 @@
 {
 	"version": 1,
 	"manifest": {
-		"id": "echo-live-blogging-dev",
-		"name": "Live Blogging (Beta)"
+		"id": "echo-live-blog-dev",
+		"name": "Live Blog (Beta)"
 	},
 	"baseURLs": {
 		"dataserver": "//nds.echoenabled.com/api",
-		"dev": "//echoplatform.com/sandbox/staging/apps/echo/live-blogging/v{%=packageVersions.stable%}/dev",
-		"prod": "//echoplatform.com/sandbox/staging/apps/echo/live-blogging/v{%=packageVersions.stable%}"
+		"dev": "//echoplatform.com/sandbox/staging/apps/echo/live-blog/v{%=packageVersions.stable%}/dev",
+		"prod": "//echoplatform.com/sandbox/staging/apps/echo/live-blog/v{%=packageVersions.stable%}"
 	}
 }

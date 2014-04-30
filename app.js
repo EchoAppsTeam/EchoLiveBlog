@@ -1,9 +1,9 @@
 (function($) {
 "use strict";
 
-if (Echo.App.isDefined("Echo.Apps.LiveBlogging")) return;
+if (Echo.App.isDefined("Echo.Apps.LiveBlog")) return;
 
-var blog = Echo.App.manifest("Echo.Apps.LiveBlogging");
+var blog = Echo.App.manifest("Echo.Apps.LiveBlog");
 
 blog.events = {
 	"Echo.UserSession.onInvalidate": {

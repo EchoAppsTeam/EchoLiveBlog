@@ -139,7 +139,7 @@ module.exports = function(grunt) {
 				"remoteRoot": shared.config("env") === "staging" ? "/staging" : "",
 				"purgeTitle": "<%= pkg.name %>",
 				"purgePaths": [
-					"/apps/echo/live-blogging/v<%= pkg.versions.stable %>/"
+					"/apps/echo/live-blog/v<%= pkg.versions.stable %>/"
 				]
 			},
 			"regular": {
@@ -148,7 +148,7 @@ module.exports = function(grunt) {
 						"all": {
 							"src": "**",
 							"cwd": "<%= dirs.dist %>/",
-							"dest": "<%= release.options.remoteRoot %>/apps/echo/live-blogging/v<%= pkg.versions.stable %>/"
+							"dest": "<%= release.options.remoteRoot %>/apps/echo/live-blog/v<%= pkg.versions.stable %>/"
 						}
 					}
 				}

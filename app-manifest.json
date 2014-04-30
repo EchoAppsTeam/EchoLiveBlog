@@ -13,7 +13,7 @@
         "icon": "http://cdn.echoenabled.com/images/echo.png"
     },
     "client_widget": {
-        "component": "Echo.Apps.LiveBlogging",
+        "component": "Echo.Apps.LiveBlog",
         "scripts": {
           "prod": "{%=baseURLs.prod%}/app.js",
           "dev": "{%=baseURLs.dev%}/app.js"
@@ -24,7 +24,7 @@
         "type": "instances",
         "title": "Instances",
         "script": "{%=baseURLs.prod%}/dashboard.js",
-        "component": "Echo.Apps.LiveBlogging.Dashboard",
+        "component": "Echo.Apps.LiveBlog.Dashboard",
         "config": {
             "instanceManager": {
                 "instance": {"useLoadingIcon": true}
@@ -35,7 +35,7 @@
         "type": "external",
         "title": "Documentation",
         "config": {
-            "src": "http://emb.echoplatform.com/liveblogging/docs/overview/"
+            "src": "http://emb.echoplatform.com/liveblog/docs/overview/"
         }
     }]
 }
