@@ -95,6 +95,9 @@ blog.renderers.auth = function(element) {
 		"component": "Echo.StreamServer.Controls.Auth",
 		"config": {
 			"target": element,
+			"infoMessages": {
+				"enabled": false
+			},
 			"plugins": [{
 				"name": "JanrainConnector",
 				"appId": this.config.get("dependencies.Janrain.appId")
