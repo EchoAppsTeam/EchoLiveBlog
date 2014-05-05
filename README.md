@@ -1,4 +1,0 @@
-EchoLiveBlog
-================
-
-Echo Live Blog
