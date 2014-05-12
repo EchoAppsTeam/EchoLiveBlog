@@ -1,7 +1,7 @@
 {
     "id": "{%=manifest.id%}",
     "name": "{%=manifest.name%}",
-    "description": "Echo Live Blog enables the editorial team to quickly create streams of live coverage during breaking news or major events. ",
+    "description": "Echo Live Blog enables the editorial team to quickly create streams of live coverage during breaking news or major events. Embed in an Article to capture audience attention and drive engagement.",
     "app_version": "{%=packageVersions.stable%}",
     "cloudapp_protocol_version": "1.0.0",
     "icon": "{%=baseURLs.prod%}/images/icon.png",
