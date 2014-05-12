@@ -2,7 +2,7 @@
 	"version": 1,
 	"manifest": {
 		"id": "echo-live-blog-dev",
-		"name": "Live Blog (Beta)"
+		"name": "Live Blog (Dev)"
 	},
 	"baseURLs": {
 		"dataserver": "//nds.echoenabled.com/api",
