@@ -2,10 +2,9 @@
 	"version": 2,
 	"manifest": {
 		"id": "echo-live-blog-dev",
-		"name": "Live Blog (Staging)"
+		"name": "Live Blog (Dev)"
 	},
 	"appBaseURLs": {
-		"dataserver": "//ds0.ul.js-kit.com/api",
 		"dev": "//echoplatform.com/sandbox/staging/apps/echo/live-blog/v{%=packageVersions.stable%}/dev",
 		"prod": "//echoplatform.com/sandbox/staging/apps/echo/live-blog/v{%=packageVersions.stable%}"
 	},
