@@ -1,12 +1,15 @@
 {
-	"version": 1,
+	"version": 2,
 	"manifest": {
 		"id": "echo-live-blog",
 		"name": "Live Blog"
 	},
-	"baseURLs": {
-		"dataserver": "//nds.echoenabled.com/api",
+	"appBaseURLs": {
 		"prod": "//cdn.echoenabled.com/apps/echo/live-blog/v{%=packageVersions.stable%}",
 		"dev": "//cdn.echoenabled.com/apps/echo/live-blog/v{%=packageVersions.stable%}/dev"
+	},
+	"apiBaseURLs": {
+		"DataServer": "//nds.echoenabled.com/api",
+		"AppServer": "//api.appserver.aboutecho.com"
 	}
 }

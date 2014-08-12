@@ -4,7 +4,7 @@
 	"description": "Echo Live Blog enables the editorial team to quickly create streams of live coverage during breaking news or major events. Embed in an Article to capture audience attention and drive engagement.",
 	"app_version": "{%=packageVersions.stable%}",
 	"cloudapp_protocol_version": "1.0.0",
-	"icon": "{%=baseURLs.prod%}/images/icon.png",
+	"icon": "{%=appBaseURLs.prod%}/images/icon.png",
 	"developer": {
 		"id": "echo",
 		"name": "Echo",
@@ -15,21 +15,16 @@
 	"client_widget": {
 		"component": "Echo.Apps.LiveBlog",
 		"scripts": {
-			"prod": "{%=baseURLs.prod%}/app.js",
-			"dev": "{%=baseURLs.dev%}/app.js"
+			"prod": "{%=appBaseURLs.prod%}/app.js",
+			"dev": "{%=appBaseURLs.dev%}/app.js"
 		}
 	},
 	"dashboards": [{
 		"id": "instances",
 		"type": "instances",
 		"title": "Instances",
-		"script": "{%=baseURLs.prod%}/dashboard.js",
-		"component": "Echo.Apps.LiveBlog.Dashboard",
-		"config": {
-			"instanceManager": {
-				"instance": {"useLoadingIcon": true}
-			}
-		}
+		"script": "{%=appBaseURLs.prod%}/dashboard.js",
+		"component": "Echo.Apps.LiveBlog.Dashboard"
 	}, {
 		"id": "docs",
 		"type": "external",
@@ -40,10 +35,10 @@
 	}],
 	"endpoints": {
 		"instance/remove": {
-			"url": "http://api.appserver.aboutecho.com/endpoints/dataserver/instance/remove"
+			"url": "{%= apiBaseURLs.AppServer %}/endpoints/dataserver/instance/remove"
 		},
 		"instance/add": {
-			"url": "http://api.appserver.aboutecho.com/endpoints/dataserver/instance/add"
+			"url": "{%= apiBaseURLs.AppServer %}/endpoints/dataserver/instance/add"
 		}
 	}
 }

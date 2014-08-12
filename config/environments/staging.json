@@ -1,12 +1,16 @@
 {
-	"version": 1,
+	"version": 2,
 	"manifest": {
 		"id": "echo-live-blog-dev",
-		"name": "Live Blog (Dev)"
+		"name": "Live Blog (Staging)"
 	},
-	"baseURLs": {
-		"dataserver": "//nds.echoenabled.com/api",
+	"appBaseURLs": {
+		"dataserver": "//ds0.ul.js-kit.com/api",
 		"dev": "//echoplatform.com/sandbox/staging/apps/echo/live-blog/v{%=packageVersions.stable%}/dev",
 		"prod": "//echoplatform.com/sandbox/staging/apps/echo/live-blog/v{%=packageVersions.stable%}"
+	},
+	"apiBaseURLs": {
+		"DataServer": "//ds0.ul.js-kit.com/api",
+		"AppServer": "//api.staging.appserver.aboutecho.com"
 	}
 }
