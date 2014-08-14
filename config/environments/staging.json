@@ -10,6 +10,6 @@
 	},
 	"apiBaseURLs": {
 		"DataServer": "//ds0.ul.js-kit.com/api",
-		"AppServer": "//api.staging.appserver.aboutecho.com"
+		"AppServer": "http://api.staging.appserver.aboutecho.com"
 	}
 }
