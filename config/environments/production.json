@@ -5,8 +5,8 @@
 		"name": "Live Blog"
 	},
 	"appBaseURLs": {
-		"prod": "//cdn.echoenabled.com/apps/echo/live-blog/v{%=packageVersions.stable%}",
-		"dev": "//cdn.echoenabled.com/apps/echo/live-blog/v{%=packageVersions.stable%}/dev"
+		"dev": "//cdn.echoenabled.com<%= release.options.versionPath() %>/dev",
+		"prod": "//cdn.echoenabled.com<%= release.options.versionPath() %>"
 	},
 	"apiBaseURLs": {
 		"DataServer": "https://api.dataserver.echoenabled.com/v1",
