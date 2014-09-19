@@ -116,75 +116,40 @@ dashboard.config.normalizer = {
 	}
 };
 
-dashboard.init = function() {
-	var self = this;
-	var parent = $.proxy(this.parent, this);
-	this._fetchData(function() {
-		self.config.set("ecl", self._prepareECL(self.config.get("ecl")));
-		parent();
-	});
+dashboard.modifiers = {
+	"dependencies.appkey": {
+		"endpoint": "customer/{self:user.getCustomerId}/appkeys",
+		"processor": function() {
+			return this.getAppkey.apply(this, arguments);
+		}
+	},
+	"dependencies.janrainapp": {
+		"endpoint": "customer/{self:user.getCustomerId}/janrainapps",
+		"processor": function() {
+			return this.getJanrainApp.apply(this, arguments);
+		}
+	},
+	"targetURL": {
+		"endpoint": "customer/{self:user.getCustomerId}/subscriptions",
+		"processor": function() {
+			return this.getBundleTargetURL.apply(this, arguments);
+		}
+	}
 };
 
-dashboard.methods._prepareECL = function(items) {
-	var self = this;
-	var instructions = {
-		"targetURL": function(item) {
-			item.config = $.extend(true, {
-				"bundle": {
-					"url": self.get("data.instance.provisioningDetails.bundleURL")
-				},
-				"domains": self.get("domains"),
-				"apiToken": self.get("dataserverToken"),
-				"instanceName": self.get("data.instance.name"),
-				"valueHandler": function() {
-					return self._assembleTargetURL();
-				}
-			}, item.config);
-			return item;
-		},
-		"dependencies.appkey": function(item) {
-			item.config.options = $.map(self.get("appkeys"), function(appkey) {
-				return {
-					"title": appkey.key,
-					"value": appkey.key
-				};
-			});
-			return item;
-		},
-		"dependencies.janrainapp": function(item) {
-			item.config.options = $.map(self.get("janrainapps"), function(app) {
-				return {
-					"title": app.name,
-					"value": app.name
-				};
-			});
-			return item;
-		}
-	};
-	return (function traverse(items, path) {
-		return $.map(items, function(item) {
-			var _path = path ? path + "." + item.name : item.name;
-			if (item.type === "object" && item.items) {
-				item.items = traverse(item.items, _path);
-			} else if (instructions[_path]) {
-				item = instructions[_path](item);
-			}
-			return item;
-		});
-	})(items, "");
+dashboard.init = function() {
+	this.parent();
 };
 
 dashboard.methods.declareInitialConfig = function() {
-	var keys = this.get("appkeys", []);
-	var apps = this.get("janrainapps", []);
 	return {
-		"targetURL": this._assembleTargetURL(),
+		"targetURL": this.assembleTargetURL(),
 		"dependencies": {
 			"Janrain": {
-				"appId": apps.length ? apps[0].name : undefined
+				"appId": this.getDefaultJanrainApp()
 			},
 			"StreamServer": {
-				"appkey": keys.length ? keys[0].key : undefined
+				"appkey": this.getDefaultAppKey()
 			},
 			"FilePicker": {
 				"apiKey": "AFLWUBllDRwWZl7sQO1V1z"
@@ -194,52 +159,6 @@ dashboard.methods.declareInitialConfig = function() {
 			}
 		}
 	};
-};
-
-dashboard.methods._fetchData = function(callback) {
-	var self = this;
-	var request = this.config.get("request");
-	var deferreds = [];
-	var requests = {
-		"dataserverToken": {
-			"endpoint": "customer/{customerId}/subscriptions",
-			"processor": function(response) {
-				var ds = $.grep(response, function(subscription) {
-					return Echo.Utils.get(subscription, "app.name") === "dataserver";
-				})[0];
-				return Echo.Utils.get(ds, "extra.token", "");
-			}
-		},
-		"domains": {
-			"endpoint": "customer/{customerId}/domains"
-		},
-		"janrainapps": {
-			"endpoint": "customer/{customerId}/janrainapps"
-		},
-		"appkeys": {
-			"endpoint": "customer/{customerId}/appkeys"
-		}
-	};
-	$.map(requests, function(requestData, requestId) {
-		var deferredId = deferreds.push($.Deferred()) - 1;
-		request($.extend(true, {
-			"customerId": self.config.get("data.customer.id"),
-			"success": function(response) {
-				self.set(requestId, requestData.processor ? requestData.processor(response) : response);
-				deferreds[deferredId].resolve();
-			},
-			"fail": function() {
-				// TODO handle errors
-				deferreds[deferredId].reject();
-			}
-		}, requestData));
-	});
-	$.when.apply($, deferreds).done(callback);
-};
-
-dashboard.methods._assembleTargetURL = function() {
-	return this.get("data.instance.config.targetURL")
-		|| this.get("data.instance.provisioningDetails.targetURL");
 };
 
 dashboard.dependencies = [{
