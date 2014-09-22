@@ -163,7 +163,7 @@ dashboard.methods.declareInitialConfig = function() {
 };
 
 dashboard.dependencies = [{
-	"url": "//cdn.echoenabled.com/apps/echo/dataserver/v3/full.pack.js",
+	"url": "{config:cdnBaseURL.apps.dataserver}/full.pack.js",
 	"control": "Echo.DataServer.Controls.Pack"
 }];
 
