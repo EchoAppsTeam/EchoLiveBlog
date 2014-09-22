@@ -35,7 +35,8 @@ dashboard.config.ecl = [{
 	"name": "dependencies",
 	"type": "object",
 	"config": {
-		"title": "Dependencies"
+		"title": "Dependencies",
+		"expanded": false
 	},
 	"items": [{
 		"component": "Select",
