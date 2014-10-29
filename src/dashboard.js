@@ -17,20 +17,6 @@ dashboard.mappings = {
 };
 
 dashboard.config.ecl = [{
-	"component": "Echo.DataServer.Controls.Dashboard.DataSourceGroup",
-	"name": "targetURL",
-	"type": "string",
-	"required": true,
-	"config": {
-		"title": "",
-		"labels": {
-			"dataserverBundleName": "Echo LiveBlog Auto-Generated Bundle for {instanceName}"
-		},
-		"apiBaseURLs": {
-			"DataServer": "{%= apiBaseURLs.DataServer %}/"
-		}
-	}
-}, {
 	"component": "Group",
 	"name": "dependencies",
 	"type": "object",
@@ -96,6 +82,21 @@ dashboard.config.ecl = [{
 		}
 	},
 	"items": []
+}, {
+	"component": "Echo.DataServer.Controls.Dashboard.DataSourceGroup",
+	"name": "targetURL",
+	"type": "string",
+	"required": true,
+	"config": {
+		"title": "",
+		"expanded": false,
+		"labels": {
+			"dataserverBundleName": "Echo LiveBlog Auto-Generated Bundle for {instanceName}"
+		},
+		"apiBaseURLs": {
+			"DataServer": "{%= apiBaseURLs.DataServer %}/"
+		}
+	}
 }];
 
 dashboard.config.normalizer = {
