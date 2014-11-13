@@ -33,12 +33,5 @@
 			"src": "http://emb.echoplatform.com/liveblog/docs/overview/"
 		}
 	}],
-	"endpoints": {
-		"instance/remove": {
-			"url": "{%= apiBaseURLs.AppServer %}/endpoints/dataserver/instance/remove"
-		},
-		"instance/add": {
-			"url": "{%= apiBaseURLs.AppServer %}/endpoints/dataserver/instance/add"
-		}
-	}
+	"dependencies": ["StreamServer", "DataServer", "Janrain", "FilePicker", "embedly"]
 }

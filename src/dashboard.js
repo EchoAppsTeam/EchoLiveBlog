@@ -143,26 +143,6 @@ dashboard.init = function() {
 	this.parent();
 };
 
-dashboard.methods.declareInitialConfig = function() {
-	return {
-		"targetURL": this.assembleTargetURL(),
-		"dependencies": {
-			"Janrain": {
-				"appId": this.getDefaultJanrainApp()
-			},
-			"StreamServer": {
-				"appkey": this.getDefaultAppKey()
-			},
-			"FilePicker": {
-				"apiKey": "AFLWUBllDRwWZl7sQO1V1z"
-			},
-			"embedly": {
-				"apiKey": "5945901611864679a8761b0fcaa56f87"
-			}
-		}
-	};
-};
-
 dashboard.dependencies = [{
 	"url": "{config:cdnBaseURL.apps.dataserver}/full.pack.js",
 	"control": "Echo.DataServer.Controls.Pack"
