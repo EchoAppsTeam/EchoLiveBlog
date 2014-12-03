@@ -144,7 +144,7 @@ dashboard.init = function() {
 };
 
 dashboard.dependencies = [{
-	"url": "{config:cdnBaseURL.apps.dataserver}/full.pack.js",
+	"url": "{config:cdnBaseURL.apps.dataserver}/dashboards.pack.js",
 	"control": "Echo.DataServer.Controls.Pack"
 }];
 
