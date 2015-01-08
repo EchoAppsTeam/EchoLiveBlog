@@ -5,7 +5,7 @@
 		"prod": "//cdn.echoplatform.com<%= release.options.versionPath() %>"
 	},
 	"apiBaseURLs": {
-		"DataServer": "//ds0.ul.js-kit.com/api",
+		"DataServer": "//staging.dataserver.echoenabled.com/api",
 		"AppServer": "http://api.staging.echostudio.co"
 	}
 }
